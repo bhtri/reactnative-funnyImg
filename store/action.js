@@ -3,10 +3,13 @@ const ACT_ADD_ACTION = 'ACT_ADD_ACTION';
 const ACT_REMOVE_ACTION = 'ACT_REMOVE_ACTION';
 
 // Action Creator
-function addAction() {
+function addAction(id, status) {
     return {
         type: ACT_ADD_ACTION,
-        payload: null,
+        payload: {
+            id,
+            status
+        },
     };
 }
 

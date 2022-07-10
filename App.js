@@ -18,7 +18,7 @@ export default function App() {
         <View style={styles.background}></View>
         <View style={styles.mainWrapper}>
           <Item data={data}/>
-          <Action />
+          <Action data={data} />
         </View>
       </SafeAreaView>
     </Provider>
