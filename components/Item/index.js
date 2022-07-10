@@ -4,12 +4,12 @@ import React from 'react'
 import { IMAGES } from '../../contains'
 import styles from './style';
 
-export default function Item() {
+export default function Item({data}) {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Chú chó dang yêu</Text>
+      <Text style={styles.text}>{data.name}</Text>
       <View style={styles.box}>
-        <Image source={IMAGES.background} style={styles.boxImage} />
+        <Image source={data.image} style={styles.boxImage} />
       </View>
     </View>
   )
