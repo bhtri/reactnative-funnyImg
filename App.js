@@ -18,16 +18,26 @@ export default function App() {
     directionalOffsetThreshold: 80
   };
 
+  const nextImage = () => {
+    const number = pet < (petsData.length - 1) ? pet + 1 : 0;
+    setPet(number);
+  }
+
+  const previousImage = () => {
+    const number = pet === 0 ? (petsData.length - 1) : pet - 1;
+    setPet(number);
+  }
+
   onSwipe = (gestureName, gestureState) => {
     const { SWIPE_UP, SWIPE_DOWN, SWIPE_LEFT, SWIPE_RIGHT } = swipeDirections;
     switch (gestureName) {
       case SWIPE_UP:
       case SWIPE_LEFT:
-        console.log('1');
+        nextImage();
         break;
       case SWIPE_DOWN:
       case SWIPE_RIGHT:
-        console.log('2');
+        previousImage();
         break;
       default:
         break;
