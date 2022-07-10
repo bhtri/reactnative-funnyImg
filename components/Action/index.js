@@ -9,9 +9,17 @@ export default function Action({ data }) {
   const listData = useSelector((state) => state.listData);
   const dispatch = useDispatch();
 
+  const activeItem = listData.find((item) => item.id === data.id);
+  const activeStatus = activeItem?.status;
+
   const onReaction = (status) => {
-    dispatch(addAction(data.id, status));
+    if (activeItem && activeStatus === status) {
+      dispatch(removeAction(data.id));
+    } else {
+      dispatch(addAction(data.id, status));
+    }
   }
+  console.log('listData', listData);
 
   return (
     <View style={styles.container}>

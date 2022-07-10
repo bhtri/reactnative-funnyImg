@@ -13,10 +13,12 @@ function addAction(id, status) {
     };
 }
 
-function removeAction() {
+function removeAction(id) {
     return {
         type: ACT_REMOVE_ACTION,
-        payload: null,
+        payload: {
+            id,
+        },
     };
 }
 
