@@ -1,12 +1,22 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
+import { useSelector, useDispatch } from 'react-redux';
 
+import { addAction, removeAction } from '../../store/action';
 import { IMAGES } from '../../contains'
 import styles from './style';
 
 export default function Action() {
+  const listData = useSelector((state) => state.listData);
+  const dispatch = useDispatch();
+
+  const click = () => {
+    dispatch(addAction());
+    dispatch(removeAction());
+  }
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={[styles.box, styles.boxFunny]}>
+      <TouchableOpacity onPress={() => click()} style={[styles.box, styles.boxFunny]}>
         <Image source={IMAGES.iconFunny} />
         <Text style={styles.number}>100</Text>
       </TouchableOpacity>
