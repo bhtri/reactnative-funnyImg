@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native';
 
+import { COLORS } from './../../contains';
+
 export default styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -9,6 +11,8 @@ export default styles = StyleSheet.create({
         marginTop: 44,
     },
     box: {
+        borderColor: COLORS.white,
+        borderWidth: 3,
         paddingVertical: 5,
         paddingHorizontal: 18,
         justifyContent: 'center',
@@ -37,5 +41,9 @@ export default styles = StyleSheet.create({
         fontWeight: 'bold',
         color: COLORS.number,
         marginTop: 11
+    },
+    active: {
+        borderColor: COLORS.active,
+        borderWidth: 3
     }
 });
