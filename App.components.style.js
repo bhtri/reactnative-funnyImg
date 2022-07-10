@@ -15,5 +15,8 @@ export default styles = StyleSheet.create({
   mainWrapper: {
     flex: 1,
     paddingHorizontal: 21,
+  },
+  wrapper: {
+    flex: 3,
   }
 });
